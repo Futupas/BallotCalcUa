@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Party 1",
+        "info": "info 1",
+        "answers": [
+            { "question_id": 1, "answer": -2 },
+            { "question_id": 2, "answer": -1 },
+            { "question_id": 3, "answer": 0 },
+            { "question_id": 4, "answer": 1 },
+            { "question_id": 5, "answer": 2 }
+        ]
+    }
+]
