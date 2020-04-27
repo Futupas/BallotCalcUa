@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+div.top{
+    padding: 10px;
+    text-align: justify;
+    padding-bottom: 0px;
+}
+
+div.top p.lead{
+    font-size: 20px;
+}
+
+div.question{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 25px;
+    border-left: none;
+    border-right: none;
+    margin: 10px 0px;
+}
+
+form#mainform button[type='submit'] {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: 50px;
+}
