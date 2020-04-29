@@ -2,13 +2,46 @@
     {
         "id": 1,
         "name": "Party 1",
-        "info": "info 1",
+        "info": "party with all 2",
+        "answers": [
+            { "question_id": 1, "answer": 2 },
+            { "question_id": 2, "answer": 2 },
+            { "question_id": 3, "answer": 2 },
+            { "question_id": 4, "answer": 2 },
+            { "question_id": 5, "answer": 2 }
+        ]
+    },{
+        "id": 2,
+        "name": "Party 2",
+        "info": "party with all -1",
         "answers": [
             { "question_id": 1, "answer": -2 },
             { "question_id": 2, "answer": -1 },
-            { "question_id": 3, "answer": 0 },
-            { "question_id": 4, "answer": 1 },
-            { "question_id": 5, "answer": 2 }
+            { "question_id": 3, "answer": -1 },
+            { "question_id": 4, "answer": -1 },
+            { "question_id": 5, "answer": -1 }
+        ]
+    },{
+        "id": 3,
+        "name": "Party 3",
+        "info": "random answers (close to Party 4)",
+        "answers": [
+            { "question_id": 1, "answer": 2 },
+            { "question_id": 2, "answer": -2 },
+            { "question_id": 3, "answer": 1 },
+            { "question_id": 4, "answer": -1 },
+            { "question_id": 5, "answer": 0 }
+        ]
+    },{
+        "id": 4,
+        "name": "Party 4",
+        "info": "random answers (close to Party 3)",
+        "answers": [
+            { "question_id": 1, "answer": 2 },
+            { "question_id": 2, "answer": -2 },
+            { "question_id": 3, "answer": 1 },
+            { "question_id": 4, "answer": 0 },
+            { "question_id": 5, "answer": 0 }
         ]
     }
 ]

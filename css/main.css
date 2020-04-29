@@ -30,3 +30,8 @@ form#mainform button[type='submit'] {
     border-bottom-right-radius: 0px;
     height: 50px;
 }
+
+.answer-btn.active{
+    padding-left: 32px; /* 16 */
+    padding-right: 32px; /* 16 */
+}

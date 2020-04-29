@@ -1,29 +1,19 @@
 'use strict';
 
-let data = [{
-    id: 1,
-    weight: 1.0,
-    question: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, fugiat?'
-},{
-    id: 2,
-    weight: 1.0,
-    question: 'Vel tempora, consequuntur dolorum accusantium autem odio quae suscipit? Nemo.'
-},{
-    id: 3,
-    weight: 1.0,
-    question: 'Ducimus quae provident consequuntur assumenda et eligendi eum dignissimos quia.'
-},{
-    id: 4,
-    weight: 1.0,
-    question: 'Illo dolorem veritatis cupiditate labore aliquid saepe accusamus vitae deserunt?'
-},{
-    id: 5,
-    weight: 1.0,
-    question: 'Dignissimos, odit itaque ipsam eos sunt inventore deserunt et dolorem.'
-}]
+document.addEventListener('DOMContentLoaded', (e) => {
+    (async function() {
+        let response = await fetch('/questions.json');
+        if (response.ok) {
+            let json = await response.json();
+            builQuestions(json);
+        } else {
+            alert('unable to load questions');
+        }
+    })();
+});
 
-buildDiv(data);
-function buildDiv(data) {
+
+function builQuestions(data) {
     for (const question of data) {
         let mainDiv = document.createElement('div');
         mainDiv.classList.add('question');
@@ -49,7 +39,7 @@ function buildDiv(data) {
         mainDiv.appendChild(btnGroupRow);
 
         let btnMin2 = document.createElement('button');
-        btnMin2.classList.add('btn', 'btn-danger');
+        btnMin2.classList.add('btn', 'btn-danger', 'answer-btn');
         btnMin2.innerText='-2';
         btnMin2.input = input;
         btnMin2.type = 'button';
@@ -63,7 +53,7 @@ function buildDiv(data) {
         btnGroup.appendChild(btnMin2);
 
         let btnMin1 = document.createElement('button');
-        btnMin1.classList.add('btn', 'btn-danger');
+        btnMin1.classList.add('btn', 'btn-danger', 'answer-btn');
         btnMin1.innerText='-1';
         btnMin1.input = input;
         btnMin1.type = 'button';
@@ -77,7 +67,7 @@ function buildDiv(data) {
         btnGroup.appendChild(btnMin1);
 
         let btn0 = document.createElement('button');
-        btn0.classList.add('btn', 'btn-default');
+        btn0.classList.add('btn', 'btn-default', 'answer-btn');
         btn0.innerText='0';
         btn0.input = input;
         btn0.type = 'button';
@@ -91,7 +81,7 @@ function buildDiv(data) {
         btnGroup.appendChild(btn0);
 
         let btn1 = document.createElement('button');
-        btn1.classList.add('btn', 'btn-success');
+        btn1.classList.add('btn', 'btn-success', 'answer-btn');
         btn1.innerText='1';
         btn1.input = input;
         btn1.type = 'button';
@@ -105,7 +95,7 @@ function buildDiv(data) {
         btnGroup.appendChild(btn1);
 
         let btn2 = document.createElement('button');
-        btn2.classList.add('btn', 'btn-success');
+        btn2.classList.add('btn', 'btn-success', 'answer-btn');
         btn2.innerText='2';
         btn2.input = input;
         btn2.type = 'button';
@@ -131,4 +121,18 @@ function buildDiv(data) {
     submit.style.width = '100%';
     submitDiv.appendChild(submit);
     document.getElementById('questions_container').appendChild(submitDiv);
+}
+
+document.getElementById('mainform').onsubmit = function(e) {
+    let inputs = document.querySelectorAll('#mainform input[name]');
+    for (const input of inputs) {
+        if (input.value !== '-2' && input.value !== '-1' && input.value !== '0' && input.value !== '1' && input.value !== '2') {
+            // console.log(input.parentElement.getBoundingClientRect().top + window.scrollY);
+            alert('answer all questions');
+            // document.documentElement.scrollTo({top: input.parentElement.offsetTop, left: 0, behavior: 'smooth'});
+            input.parentElement.scrollIntoView({ behavior: 'smooth' });
+            return false;
+        }
+    }
+    return true;
 }
