@@ -91,3 +91,4 @@
 [29-Apr-2020 23:05:39 UTC] PHP Notice:  Undefined offset: 0 in C:\PROJECTS\BallotCalcUa\calculate.php on line 19
 [29-Apr-2020 23:05:39 UTC] PHP Notice:  Undefined offset: 1 in C:\PROJECTS\BallotCalcUa\calculate.php on line 19
 [29-Apr-2020 23:05:39 UTC] PHP Notice:  Undefined offset: 2 in C:\PROJECTS\BallotCalcUa\calculate.php on line 19
+[30-Apr-2020 08:28:41 UTC] PHP Deprecated:  Unparenthesized `a ? b : c ? d : e` is deprecated. Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)` in C:\PROJECTS\BallotCalcUa\calculate.php on line 78

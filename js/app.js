@@ -131,6 +131,7 @@ document.getElementById('mainform').onsubmit = function(e) {
             alert('answer all questions');
             // document.documentElement.scrollTo({top: input.parentElement.offsetTop, left: 0, behavior: 'smooth'});
             input.parentElement.scrollIntoView({ behavior: 'smooth' });
+            e.preventDefault();
             return false;
         }
     }
